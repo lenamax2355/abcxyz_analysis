@@ -16,9 +16,9 @@ def calculate_coefficients_of_variation(data):
     return coefficients_of_variation
 
 
-def assign_to_groups(variations):
+def assign_to_groups(coefficients_of_variation):
     list_of_groups = []
-    for variation in variations:
+    for variation in coefficients_of_variation:
         if variation > 25:
             list_of_groups.append('Z')
         elif variation < 25 and variation > 10:
