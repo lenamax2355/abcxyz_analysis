@@ -2,10 +2,10 @@ from statistics import mean, pstdev
 
 
 def get_data(cursor, sql):
-    quarters_margin_list = []
+    data_list = []
     for product in cursor.execute(sql):
-        quarters_margin_list.append([product[0], product[1], product[2], product[3]])
-    return quarters_margin_list
+        data_list.append(product)
+    return data_list
 
 
 def calculate_coefficients_of_variation(data):
