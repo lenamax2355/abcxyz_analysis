@@ -2,10 +2,10 @@ import sqlite3
 
 
 def get_data(cursor, sql):
-    year_margin_list = []
+    data_list = []
     for product in cursor.execute(sql):
-        year_margin_list.append(product[0])
-    return year_margin_list
+        data_list.append(product[0])
+    return data_list
 
 
 def calculate_shares(data, total):
