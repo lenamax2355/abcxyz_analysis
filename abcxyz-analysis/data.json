@@ -1,0 +1,16 @@
+{
+    "company1":
+    {
+        "database": "./db/company1.db",
+        "products_sql": "SELECT product FROM income ORDER BY year DESC",
+        "abc_sql": "SELECT year FROM income ORDER BY year DESC",
+        "xyz_sql": "SELECT january, february, march, april, may, june, july, august, september, october, november, december FROM income ORDER BY year DESC"
+    },
+    "company2":
+    {
+        "database": "./db/company2.db",
+        "products_sql": "SELECT product FROM margin ORDER BY total DESC",
+        "abc_sql": "SELECT total FROM margin ORDER BY total DESC",
+        "xyz_sql": "SELECT q1, q2, q3, q4 FROM margin ORDER BY total DESC"
+    }
+}
