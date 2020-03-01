@@ -25,6 +25,20 @@ def get_overall_result(cursor, product_sql, abc_sql, xyz_sql):
     return final_overall_result
 
 
+def write_result_to_database(connect, cursor, result):
+    cursor.execute("""CREATE TABLE abc_xyz_analysis
+                    (product text, result text)
+                    """)
+
+    for product in result:
+        product_name = product[0]
+        result = product[1]
+        cursor.execute("""INSERT INTO abc_xyz_analysis 
+                        (product, result) VALUES (?, ?)""",
+                        (product_name, result))
+        connect.commit()
+
+
 if __name__ == "__main__":
     with open("/home/badger_bo/devel/abcxyz-analysis/abcxyz-analysis/data.json") as json_file:
         data_dict = json.load(json_file)
@@ -36,3 +50,4 @@ if __name__ == "__main__":
             conn = sqlite3.connect(database)
             c = conn.cursor()
             overall_result = get_overall_result(c, products_sql, abc_sql, xyz_sql)
+            write_result_to_database(conn, c, overall_result)
