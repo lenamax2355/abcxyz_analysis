@@ -29,7 +29,6 @@ def write_result_to_database(connect, cursor, result):
     cursor.execute("""CREATE TABLE abc_xyz_analysis
                     (product text, result text)
                     """)
-
     for product in result:
         product_name = product[0]
         result = product[1]
@@ -40,7 +39,7 @@ def write_result_to_database(connect, cursor, result):
 
 
 if __name__ == "__main__":
-    with open("/home/badger_bo/devel/abcxyz-analysis/abcxyz-analysis/data.json") as json_file:
+    with open("abcxyz-analysis/data.json") as json_file:
         data_dict = json.load(json_file)
         for company in data_dict:
             database = data_dict[company]['database']
