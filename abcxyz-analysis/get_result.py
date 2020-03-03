@@ -3,6 +3,7 @@ import json
 
 import abc_analysis as abc
 import xyz_analysis as xyz
+import compile_report as report
 
 
 def get_products_data(cursor, sql):
@@ -50,3 +51,4 @@ if __name__ == "__main__":
             c = conn.cursor()
             overall_result = get_overall_result(c, products_sql, abc_sql, xyz_sql)
             write_result_to_database(conn, c, overall_result)
+            report.compile_report(company, overall_result)
