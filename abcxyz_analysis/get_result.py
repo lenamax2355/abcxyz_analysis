@@ -40,7 +40,7 @@ def write_result_to_database(connect, cursor, result):
 
 
 if __name__ == "__main__":
-    with open("abcxyz-analysis/data.json") as json_file:
+    with open("abcxyz_analysis/data.json") as json_file:
         data_dict = json.load(json_file)
         for company in data_dict:
             database = data_dict[company]['database']
