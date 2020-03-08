@@ -14,7 +14,7 @@ You can learn more about the analysis [here](https://abcsupplychain.com/en/abc-x
 This is a script which provides automatic calculation and products assignment to an according groups in order to simplify the process of ABC-XYZ analysis.
 
 
-## How it works
+## How does it work
 
 - Database specifications are written to data.json
 - Initial data is read from the database
